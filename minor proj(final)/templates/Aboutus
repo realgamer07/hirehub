@@ -1,0 +1,739 @@
+<!--startig of dashboard-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hirehub|Dashboard</title>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/heroes/hero-5/assets/css/hero-5.css">
+  <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
+</head>
+<div>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <div class="navbar">
+    <nav class="bg-gray-800 fixed top-0 w-screen padding-top">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu" aria-expanded="false">
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+              <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+              <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex flex-shrink-0 items-center">
+              <img class="h-8 w-auto" src="/images/logo.jpg" style="border-radius: 50%;">
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="dashboard.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  aria-current="page">Dashboard</a>
+                <a href="Branches.html"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Branches</a>
+                <a href="domain.html"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Domain</a>
+                <a href="news.html"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">News</a>
+                <a href="Aboutus.html"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-green">About
+                  Us</a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <button type="button"
+              class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
+
+            <!-- Profile dropdown -->
+            <div class="relative ml-3">
+              <div>
+                <button type="button"
+                  class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="absolute -inset-1.5"></span>
+                  <span class="sr-only">Open user menu</span>
+                  <img class="h-8 w-8 rounded-full"
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt="">
+                </button>
+              </div>
+
+              <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                <!-- Active: "bg-gray-100", Not Active: "" -->
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">View Profile</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Log out</a>
+                
+              </div>
+              <!--
+                  Dropdown menu, show/hide based on menu state.
+      
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <br><br>
+  <!-- Hero 5 - Bootstrap Brain Component -->
+  <section class="bsb-hero-5 px-3 bsb-overlay" style="background-image: url(/images/bagimg.jpg);">
+    <div class="container">
+      <div class="row justify-content-md-center align-items-center">
+        <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7">
+          <h2 class="display-1 text-white text-center fw-bold mb-4">Dream of Success</h2>
+          <p class="lead text-white text-center mb-5 d-flex justify-content-sm-center">
+            <span class="col-12 col-sm-10 col-md-8 col-xxl-7">Share your resumes and get your dream job received.
+              Hirehub offers a platform to show your resumes across the web.</span>
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn bsb-btn-2xl btn-outline-light">Welcome to Hirehub</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </body>
+
+</html>
+
+<!--startig of branch-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirehub|Branches</title>
+    
+    <style>
+        #b1{
+  background-image: url('/images/it\ logo.png');
+  background-size: cover;
+        }
+#b1{
+  position: relative;
+}
+#b1::after{
+  content:"Information Technology";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b1:hover::after{
+  display: block;
+}
+
+#b2{
+  background-image: url('/images/cs\ logo.png');
+  background-size: cover;
+  position:relative;
+}
+#b2::after{
+  content:"Computer Science and Engineering";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b2:hover::after{
+  display: block;
+}
+#b3{
+  background-image: url('/images/ai\ logo.avif');
+  background-size: cover;
+  position: relative;
+}
+#b3::after{
+  content:"Artificial Intelligence";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b3:hover::after{
+  display: block;
+}
+#b4{
+  background-image: url('/images/ds\ logo.png');
+  position: relative;
+}
+#b4::after{
+  content:"Data Science";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b4:hover::after{
+  display: block;
+}
+#b5{
+  background-image: url('/images/etc\ logo.jpg');
+  position: relative;
+}
+#b5::after{
+  content:"Electronics and Telecommunication";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b5:hover::after{
+  display: block;
+}
+#b6{
+  background-image: url('/images/cyslogo.png');
+  position: relative;
+}
+#b6::after{
+  content:"Cyber Security";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b6:hover::after{
+  display: block;
+}
+#b7{
+  background-image: url('/images/civileng\ logo.jpg');
+  background-size: cover;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#b7::after{
+  content:"Civil Engineering";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b7:hover::after{
+  display: block;
+}
+#b8{
+  background-image: url('/images/mechlogo.jpg');
+  position: relative;
+}
+#b8::after{
+  content:"Mechanical Engineering";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b8:hover::after{
+  display: block;
+}
+#b9{
+  background-image: url('/images/el.jpg');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#b9::after{
+  content:"Electrical Engineering";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b9:hover::after{
+  display: block;
+}
+#b10{
+  background-image: url('/images/electroniclogo.jpg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#b10::after{
+  content:"Electronics Engineering";
+  display: none;
+  position: absolute;
+  bottom:100%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#b10:hover::after{
+  display: block;
+}
+    </style>
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
+</head>
+<body>
+    <script src="https://cdn.tailwindcss.com">
+      // If you want to dynamically change the background image
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    button.style.backgroundImage = 'url("new-background-image.jpg")';
+  });
+});
+    </script>
+    <div class="navbar">
+        <nav class="bg-gray-800 fixed top-0 w-screen padding-top">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+              <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                  <!-- Mobile menu button-->
+                  <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Open main menu</span>
+                    <!--
+                      Icon when menu is closed.
+          
+                      Menu open: "hidden", Menu closed: "block"
+                    -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <!--
+                      Icon when menu is open.
+          
+                      Menu open: "block", Menu closed: "hidden"
+                    -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                  <div class="flex flex-shrink-0 items-center">
+                    <img class="h-8 w-auto" src="/images/logo.jpg" style="border-radius: 50%;">
+                  </div>
+                  <div class="hidden sm:ml-6 sm:block">
+                    <div class="flex space-x-4">
+                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                      <a href="dashboard.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                      <a href="Branches.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Branches</a>
+                      <a href="domain.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Domain</a>
+                      <a href="news.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">News</a>
+                      <a href="Aboutus.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-green">About Us</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                  <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">View notifications</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                    </svg>
+                  </button>
+          
+                  <!-- Profile dropdown -->
+                  <div class="relative ml-3">
+                    <div>
+                      <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <span class="absolute -inset-1.5"></span>
+                        <span class="sr-only">Open user menu</span>
+                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                      </button>
+                    </div>
+          
+                    <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                      <!-- Active: "bg-gray-100", Not Active: "" -->
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">View Profile</a>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Log out</a>
+                      
+                    </div>
+                    <!--
+                      Dropdown menu, show/hide based on menu state.
+          
+                      Entering: "transition ease-out duration-100"
+                        From: "transform opacity-0 scale-95"
+                        To: "transform opacity-100 scale-100"
+                      Leaving: "transition ease-in duration-75"
+                        From: "transform opacity-100 scale-100"
+                        To: "transform opacity-0 scale-95"
+                    -->
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <h1 style="font-size: x-large; font-weight: bold; margin-left: 30px; text-align: center;">Our Branches</h1>
+        <br><br>
+        <!-- Branch Section -->
+        <div class="flex flex-wrap justify-center">
+          <a href="web_upload.html"><button id="b1" class="bg-cover bg-center h-24 w-24 md:h-82 md:w-82 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl shadow- m-4"></button></a>
+          <a href="web_upload.html"><button id="b2" class="bg-cover bg-center h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+          <a href="web_upload.html"><button id="b3"class="bg-cover bg-center h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+          <a href="web_upload.html"><button id="b4" class="bg-cover bg-center h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+          <a href="web_upload.html"><button id="b5" class="bg-cover bg-center h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+          <a href="web_upload.html"><button id="b6"class="bg-cover bg-center h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+        </div>
+        <div class="flex flex-wrap justify-center">
+          <a href="web_upload.html"><button id="b7" class="bg-cover bg-center h-24 w-24 md:h-82 md:w-82 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+          <a href="web_upload.html"><button id="b8" class="bg-cover bg-center h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+          <a href="web_upload.html"><button id="b9" class="bg-cover bg-center h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+          <a href="web_upload.html"><button id="b10" class="bg-cover bg-center h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48 rounded-full shadow-xl m-4"></button></a>
+        </div>
+</body>
+</html>
+
+<!--startig of domain-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirehub|Domain</title>
+    <style>
+html{
+  scroll-behavior: smooth;
+}
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
+</head>
+<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <div class="container">
+    <nav class="bg-gray-800 fixed top-0 w-screen"> 
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center">
+                <img class="h-8 w-auto" src="/images/logo.jpg" style="border-radius: 50%;">
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a href="dashboard.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                  <a href="Branches.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Branches</a>
+                  <a href="domain.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Domain</a>
+                  <a href="news.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">News</a>
+                  <a href="Aboutus.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-green">About Us</a>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">View notifications</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                </svg>
+              </button>
+      
+              <!-- Profile dropdown -->
+              <div class="relative ml-3">
+                <div>
+                  <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  </button>
+                </div>
+                <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                  <!-- Active: "bg-gray-100", Not Active: "" -->
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">View Profile</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Log out</a>
+                  
+                </div>
+                <!--
+                  Dropdown menu, show/hide based on menu state.
+      
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- Team Section -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto p-4">
+      <h2 class="text-3xl font-bold mb-4">Our Domains</h2>
+      <div class="flex flex-wrap -mx-4">
+        <!-- Team Member 1 -->
+        <div class="w-full md:w-1/2 xl:w-1/3 p-4">
+          <div class="bg-white shadow-xl rounded p-4">
+            <img src="/images/web domain.jpg" alt="Team Member 1" class="w-full h-48 object-cover rounded-t">
+            <h3 class="text-lg font-bold mb-2">Web Development</h3>
+            <p class="text-gray-600"><a href="web_upload.html"><button style="color:white; background-color: blue; height: 38px; width: 58px; border-radius: 6px;">Hire</button></a></p>
+            <p class="text-gray-600 h-44">Web development is the process of building and maintaining websites, web applications, and mobile applications. </p>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="w-full md:w-1/2 xl:w-1/3 p-4">
+          <div class="bg-white shadow-xl rounded p-4">
+            <img src="/images/cyber domain.jpg" alt="Team Member 2" class="w-full h-48 object-cover rounded-t">
+            <h3 class="text-lg font-bold mb-2">Cyber Security</h3>
+            <p class="text-gray-600"><a href="web_upload.html"><button style="color:white; background-color: blue; height: 38px; width: 58px; border-radius: 6px;">Hire</button></a></p>
+            <p class="text-gray-600 h-44">Cybersecurity is the practice of protecting computer systems, networks, and sensitive information from unauthorized access, use, disclosure, disruption, modification, or destruction.</p>
+          </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="w-full md:w-1/2 xl:w-1/3 p-4">
+          <div class="bg-white shadow-xl rounded p-4">
+            <img src="/images/block chain domain.jpg" alt="Team Member 3" class="w-full h-48 object-cover rounded-t">
+            <h3 class="text-lg font-bold mb-2">Block Chain</h3>
+            <p class="text-gray-600"><a href="web_upload.html"><button style="color:white; background-color: blue; height: 38px; width: 58px; border-radius: 6px;">Hire</button></a></p>
+            <p class="text-gray-600 h-44">Blockchain is a decentralized, distributed ledger technology that enables secure, transparent, and tamper-proof data storage and transfer. It's the foundation for cryptocurrencies like Bitcoin and Ethereum, but its applications extend far beyond digital currency.</p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 xl:w-1/3 p-4">
+            <div class="bg-white shadow-xl rounded p-4">
+              <img src="/images/software domain.jpeg" alt="Team Member 1" class="w-full h-48 object-cover rounded-t">
+              <h3 class="text-lg font-bold mb-2">Software Development</h3>
+              <p class="text-gray-600"><a href="web_upload.html"><button style="color:white; background-color: blue; height: 38px; width: 58px; border-radius: 6px;">Hire</button></a></p>
+              <p class="text-gray-600 h-44">Software development is the process of designing, creating, testing, and maintaining software systems.</p>
+            </div>
+          </div>
+          <!-- Team Member 2 -->
+          <div class="w-full md:w-1/2 xl:w-1/3 p-4">
+            <div class="bg-white shadow-xl rounded p-4">
+              <img src="/images/cloud domain.jpg" alt="Team Member 2" class="w-full h-48 object-cover rounded-t">
+              <h3 class="text-lg font-bold mb-2">Cloud Computing</h3>
+              <p class="text-gray-600"><a href="web_upload.html"><button style="color:white; background-color: blue; height: 38px; width: 58px; border-radius: 6px;">Hire</button></a></p>
+              <p class="text-gray-600 h-44">Cloud computing is a model for delivering computing services over the internet, where resources such as servers, storage, databases, software, and applications are provided as a service to users on-demand.</p>
+            </div>
+          </div>
+          <!-- Team Member 3 -->
+          <div class="w-full md:w-1/2 xl:w-1/3 p-4">
+            <div class="bg-white shadow-xl rounded p-4">
+              <img src="/images/data analytics domain.jpg" alt="Team Member 3" class="w-full h-48 object-cover rounded-t">
+              <h3 class="text-lg font-bold mb-2">Data Analytics</h3>
+              <p class="text-gray-600"><a href="web_upload.html"><button style="color:white; background-color: blue; height: 38px; width: 58px; border-radius: 6px;">Hire</button></a></p>
+              <p class="text-gray-600 h-44">Data analytics is the process of examining data sets to draw conclusions and identify patterns, trends, and correlations. It involves using various techniques, tools, and methods to analyze and interpret data, often to inform business decisions or solve complex problems.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+
+<!--startig of about us-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
+  <link rel="stylesheet" href="/static/styles.css"> <!-- Link to the CSS file -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div>
+    <div class="navbar">
+      <nav class="bg-gray-800 fixed top-0 w-screen padding-top">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center">
+                <img class="h-8 w-auto" src="/images/logo.jpg" style="border-radius: 50%;">
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <a href="dashboard.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                  <a href="Branches.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Branches</a>
+                  <a href="domain.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Domain</a>
+                  <a href="News.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">News</a>
+                  <a href="Aboutus.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-green">About Us</a>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">View notifications</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                </svg>
+              </button>
+
+              <div class="relative ml-3">
+                <div>
+                  <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  </button>
+                </div>
+                <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                  <!-- Active: "bg-gray-100", Not Active: "" -->
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">View Profile</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Log out</a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <br><br><br>
+    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0">
+          <br>
+          <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Join Hirehub Now!!</h2>
+          <p class="mt-6 text-lg leading-8 text-gray-300">"Welcome to Hirehub , your premier partner in achieving your dream career! We pride ourselves on providing a cutting-edge platform where talented individuals like you can showcase their skills and connect with top companies. Our mission is to bridge the gap between ambitious professionals and leading organizations, fostering meaningful collaborations that drive success.</p>
+        </div>
+        <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+          <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+            <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
+            <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a>
+            <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
+            <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
